@@ -1,0 +1,107 @@
+<html>
+<script>
+
+	function change()
+	{
+		
+		var vno=document.getElementById("v").value;
+		var cno=document.getElementById("co").value;
+		var date=document.getElementById("d").value;
+		var duration=document.getElementById("du").value;
+		var charges=document.getElementById("c").value;
+
+		if(vno.length==0 || cno.length==0||date.length==0||duration.length==0||charges.length==0)
+		{
+			alert("All fields are cumpulsory!!!");
+			return false;
+
+		}
+		
+		var t=parseInt(cno);
+		
+		if(isNaN(t)||cno.length !=10)
+		{
+				
+				alert("Contact must be number and 10 digit!!!");
+				return false;
+			
+			
+		}
+		
+		var t1=parseInt(duration);
+		
+		if(isNaN(t1))
+		{
+			
+				alert("Only Numbers Allowed!!!!");
+				return false;
+			
+		}
+		 if(vno.length!=13)
+		{
+			alert("Invalid Format Of Vehicle Number");
+			return false;
+
+		}
+				
+		
+	}
+	
+	function dur()
+	{
+		var duration=document.getElementById("du").value;
+		var s=duration*100;
+		document.getElementById("c").value=s;
+
+	}
+
+</script>
+<style>
+body{
+	margin:0;
+	padding:0;
+	background: url(s6.jpg);
+	background-size: cover;
+	background-position: center;
+	font-family: sans-serif;
+}
+input{
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 5px 5px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+input[type=text],input[type=date]
+ {
+  width: 30%;
+  padding: 5px 5px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #555;
+  outline: none;
+  
+   }
+
+
+</style>
+
+<form method="POST" action="./Vehicle11" onsubmit="return change()">
+<body background="light.jpg" >
+<body>
+<pre>
+		<b><u>Vehicle Number</u></b> <input type="text" name="vno" id="v" size=16><br>
+		<b><u>Contact Number</u></b> <input type="text" name="cno" id="co" size=16><br>
+		<b><u>Duration(Hr)</u></b>   <input type="text" name="duration"id="du"onkeyup="dur()"size=16><br>							
+	        <b><u>Charges</u></b>        <input type="text" name="charges" id="c" size=16 readonly>
+		
+		<b><u>Entry Date</u></b>     <input type="text" name="date" id="d" size=10><br>
+
+				     <input type="submit" Value="Next"><br>
+</pre>
+</form>
+</body>
+</html>

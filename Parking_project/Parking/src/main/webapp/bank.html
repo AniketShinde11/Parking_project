@@ -1,0 +1,77 @@
+<html>
+<style>
+input[type=text] {
+  width: 30%;
+  padding: 5px 5px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #555;
+  outline: none;
+   background-color: #3CBC222D;
+}
+input{
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 5px 5px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+body
+{
+	
+	margin:10;
+	padding:10;
+	background: url(14.jpeg);
+	background-size: cover;
+	background-position: center;
+	font-family: sans-serif;
+	
+
+}
+</style>
+<script>
+		function change()
+	{
+		
+		var bn=document.getElementById("b").value;
+		var ic=document.getElementById("i").value;
+		var ac=document.getElementById("a").value;
+		
+
+		if(bn.length==0 || ic.length==0||ac.length==0)
+		{
+			alert("All fields are cumpulsory!!!");
+			return false;
+
+		}
+		
+		var t=parseInt(ac);
+		
+		if(isNaN(t))
+		{
+			
+				alert("Invalid Account Number!!!");
+				return false;
+			
+		}
+		
+				
+		
+	}
+
+</script>
+
+
+<form method="POST" action="./Last" onsubmit="return change()">
+<center><h1>Net Banking</h1></center>
+<pre>
+		<b>Bank Name</b><input type="text" name="bname" id="b"><br>
+		<b>IFSC Code</b><input type="text" name="icode" id="i"><br>
+		<b>ACC   NO </b><input type="text" name="bname" id="a"><br>
+
+						<input type="submit" value="PAY">
+</pre>
+
+</html>

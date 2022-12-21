@@ -1,0 +1,73 @@
+<html>
+<style>
+input[type=text] {
+  width: 30%;
+  padding: 5px 5px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #555;
+  outline: none;
+   background-color: #3CBC222D;
+}
+input{
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 5px 5px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+<script>
+		function change()
+	{
+		
+		var cno=document.getElementById("c").value;
+		var cname=document.getElementById("cn").value;
+		var date=document.getElementById("d").value;
+		var cvv=document.getElementById("cv").value;
+
+		if(cno.length==0 || cname.length==0||date.length==0||cvv.length==0)
+		{
+			alert("All fields are cumpulsory!!!");
+			return false;
+
+		}
+		
+		var t=parseInt(cno);
+		
+		if(isNaN(t))
+		{
+			
+				alert("Invalid Card Number!!!");
+				return false;
+			
+		}
+		
+		var t1=parseInt(cvv);
+		
+		if(isNaN(t1))
+		{
+			
+				alert("Invalid CVV!!!");
+				return false;
+			
+		}
+		
+		
+	}
+
+</script>
+<form method="POST" action="./Last" onsubmit="return change()">
+<body background="12.jpg">
+<center><h1>Credit Card</h1></center>
+<pre>
+<b>Card Number</b>     <input type="text" name="cno" id="c"><br>
+<b>Expiry Date</b>     <input type="date" name="edate" id="d"> <b>CVV</b><input type="text" name="cvv" id="cv"><br>
+<b>Card Holder Name</b><input type="text" name="chname" id="cn" ><br>
+
+						<input type="submit" value="PAY">
+</pre>
+
+</html>
